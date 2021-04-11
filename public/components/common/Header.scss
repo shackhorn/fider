@@ -47,6 +47,7 @@
     .c-menu-item-title {
       @include menu-item;
       color: #484848;
+
       img {
         margin-right: 10px;
         width: auto;
@@ -55,15 +56,6 @@
         @include media("sm") {
           max-height: 26px;
           margin-right: 5px;
-        }
-      }
-      h1 {
-        font-size: $font-size-big;
-        margin: 0 0 0 0;
-        font-weight: 600;
-        @include media("sm") {
-          font-size: $font-size;
-          max-width: 240px;
         }
       }
     }
@@ -108,7 +100,7 @@
 
         .c-menu-user-heading {
           white-space: nowrap;
-          font-size: $font-size-mini;
+          font-size: $font-size-xs;
           padding: 10px;
           display: block;
           color: $gray-900;
@@ -118,7 +110,7 @@
         }
 
         .c-menu-user-item {
-          font-size: $font-size-small;
+          font-size: $font-size-sm;
           padding: 10px;
           display: block;
           color: $gray-900;
@@ -159,7 +151,7 @@
         padding: 2px 8px;
         color: $white;
         border-radius: 100px;
-        font-size: $font-size-mini;
+        font-size: $font-size-xs;
         text-align: center;
       }
     }

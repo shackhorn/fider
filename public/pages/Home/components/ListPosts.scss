@@ -7,11 +7,9 @@
 
     .c-list-item-title {
       color: $gray-900;
-      font-weight: 500;
       margin-bottom: 10px;
-      font-size: $font-size-large;
       &:hover {
-        color: $main-color;
+        color: $primary-color;
       }
     }
 
@@ -38,6 +36,6 @@
 .c-post-list-show-more {
   cursor: pointer;
   font-weight: 500;
-  color: $main-color;
+  color: $primary-color;
   margin-left: 55px;
 }

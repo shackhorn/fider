@@ -96,13 +96,13 @@ export default class ShowPostPage extends React.Component<ShowPostPageProps, Sho
             <ListItem>
               <VoteCounter post={this.props.post} />
 
-              <div className="post-header">
+              <div>
                 {this.state.editMode ? (
                   <Form error={this.state.error}>
                     <Input field="title" maxLength={100} value={this.state.newTitle} onChange={this.setNewTitle} />
                   </Form>
                 ) : (
-                  <h1>{this.props.post.title}</h1>
+                  <h1 className="text-xl">{this.props.post.title}</h1>
                 )}
 
                 <span className="info">

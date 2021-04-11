@@ -1,9 +1,7 @@
-$space: 5px;
-
-.mb-1 {
-  margin-bottom: $space;
-}
-
-.mb-2 {
-  margin-bottom: $space * 2;
-}
+@import "variables.scss";
+@import "utility/text.scss";
+@import "utility/colors.scss";
+@import "utility/sizing.scss";
+@import "utility/spacing.scss";
+@import "utility/display.scss";
+@import "utility/border.scss";

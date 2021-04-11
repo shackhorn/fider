@@ -21,7 +21,7 @@ const ListPostItem = (props: { post: Post; user?: CurrentUser; tags: Tag[] }) =>
             {props.post.commentsCount} <FaRegComments />
           </div>
         )}
-        <a className="c-list-item-title" href={`/posts/${props.post.number}/${props.post.slug}`}>
+        <a className="c-list-item-title text-lg font-medium" href={`/posts/${props.post.number}/${props.post.slug}`}>
           {props.post.title}
         </a>
         <MultiLineText className="c-list-item-description" maxLength={300} text={props.post.description} style="plainText" />

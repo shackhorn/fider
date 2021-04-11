@@ -1,23 +1,17 @@
-@import "~@fider/assets/styles/variables.scss";
+@import "~@fider/assets/styles/utility.scss";
 
 .c-avatar {
-  border-radius: 50%;
-  vertical-align: middle;
-  padding: 1px;
-  display: inline-block;
+  @extend .rounded-full, .inline-block;
 
-  &.m-small {
-    width: 25px;
-    height: 25px;
+  &__small {
+    @extend .w-6, .h-6;
   }
 
-  &.m-normal {
-    width: 30px;
-    height: 30px;
+  &__normal {
+    @extend .w-8, .h-8;
   }
 
-  &.m-large {
-    width: 35px;
-    height: 35px;
+  &__large {
+    @extend .w-10, .h-10;
   }
 }

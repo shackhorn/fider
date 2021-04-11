@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { OAuthConfig, OAuthConfigStatus, ImageUpload } from "@fider/models"
 import { Failure, actions } from "@fider/services"
-import { Form, Button, Input, Heading, SocialSignInButton, Field, ImageUploader, Toggle } from "@fider/components"
+import { Form, Button, Input, SocialSignInButton, Field, ImageUploader, Toggle } from "@fider/components"
 import { useFider } from "@fider/hooks"
 
 interface OAuthFormProps {
@@ -70,7 +70,7 @@ export const OAuthForm: React.FC<OAuthFormProps> = (props) => {
   const title = props.config ? `OAuth Provider: ${props.config.displayName}` : "New OAuth Provider"
   return (
     <>
-      <Heading title={title} size="small" />
+      <h2 className="text-2xl font-medium">{title}</h2>
       <Form error={error}>
         <div className="row">
           <div className="col-sm-9">

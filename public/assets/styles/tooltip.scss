@@ -1,4 +1,4 @@
-[data-tooltip]{
+[data-tooltip] {
   cursor: pointer;
   position: relative;
 }
@@ -6,7 +6,7 @@
 [data-tooltip]::before {
   background-color: $gray-700;
   color: $white;
-  font-size: $font-size-tiny;
+  font-size: $font-size-xs;
   padding: 4px 6px;
   height: max-content;
   width: max-content;

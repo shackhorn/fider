@@ -1,13 +1,9 @@
-import "./UIToolkit.page.scss"
-
 import React, { useState } from "react"
 import { PostStatus, UserStatus } from "@fider/models"
 import {
   Heading,
   Button,
-  List,
   UserName,
-  ListItem,
   Toggle,
   Avatar,
   ShowTag,
@@ -102,69 +98,84 @@ const UIToolkitPage = () => {
 
   return (
     <div id="p-ui-toolkit" className="page container">
-      <div className="color-scale">
-        <div className="color gray-900" />
-        <div className="color gray-700" />
-        <div className="color gray-500" />
-        <div className="color gray-400" />
-        <div className="color gray-300" />
-        <div className="color gray-200" />
-        <div className="color gray-100" />
-        <div className="color gray-50" />
+      <h2 className="text-2xl mb-6 font-medium">Colors</h2>
+
+      <div className="mb-2 flex space-x-1">
+        <div className="w-8 h-8 rounded-md bg-gray-900" />
+        <div className="w-8 h-8 rounded-md bg-gray-800" />
+        <div className="w-8 h-8 rounded-md bg-gray-700" />
+        <div className="w-8 h-8 rounded-md bg-gray-600" />
+        <div className="w-8 h-8 rounded-md bg-gray-500" />
+        <div className="w-8 h-8 rounded-md bg-gray-400" />
+        <div className="w-8 h-8 rounded-md bg-gray-300" />
+        <div className="w-8 h-8 rounded-md bg-gray-200" />
+        <div className="w-8 h-8 rounded-md bg-gray-100" />
+        <div className="w-8 h-8 rounded-md bg-gray-50" />
       </div>
-      <div className="color-scale">
-        <div className="color green-900" />
-        <div className="color green-700" />
-        <div className="color green-500" />
-        <div className="color green-400" />
-        <div className="color green-300" />
-        <div className="color green-200" />
-        <div className="color green-100" />
-        <div className="color green-50" />
+      <div className="mb-2 flex space-x-1">
+        <div className="w-8 h-8 rounded-md bg-green-900" />
+        <div className="w-8 h-8 rounded-md bg-green-800" />
+        <div className="w-8 h-8 rounded-md bg-green-700" />
+        <div className="w-8 h-8 rounded-md bg-green-600" />
+        <div className="w-8 h-8 rounded-md bg-green-500" />
+        <div className="w-8 h-8 rounded-md bg-green-400" />
+        <div className="w-8 h-8 rounded-md bg-green-300" />
+        <div className="w-8 h-8 rounded-md bg-green-200" />
+        <div className="w-8 h-8 rounded-md bg-green-100" />
+        <div className="w-8 h-8 rounded-md bg-green-50" />
       </div>
-      <div className="color-scale">
-        <div className="color red-900" />
-        <div className="color red-700" />
-        <div className="color red-500" />
-        <div className="color red-400" />
-        <div className="color red-300" />
-        <div className="color red-200" />
-        <div className="color red-100" />
-        <div className="color red-50" />
+      <div className="mb-2 flex space-x-1">
+        <div className="w-8 h-8 rounded-md bg-red-900" />
+        <div className="w-8 h-8 rounded-md bg-red-800" />
+        <div className="w-8 h-8 rounded-md bg-red-700" />
+        <div className="w-8 h-8 rounded-md bg-red-600" />
+        <div className="w-8 h-8 rounded-md bg-red-500" />
+        <div className="w-8 h-8 rounded-md bg-red-400" />
+        <div className="w-8 h-8 rounded-md bg-red-300" />
+        <div className="w-8 h-8 rounded-md bg-red-200" />
+        <div className="w-8 h-8 rounded-md bg-red-100" />
+        <div className="w-8 h-8 rounded-md bg-red-50" />
       </div>
-      <div className="color-scale">
-        <div className="color blue-900" />
-        <div className="color blue-700" />
-        <div className="color blue-500" />
-        <div className="color blue-400" />
-        <div className="color blue-300" />
-        <div className="color blue-200" />
-        <div className="color blue-100" />
-        <div className="color blue-50" />
+      <div className="mb-2 flex space-x-1">
+        <div className="w-8 h-8 rounded-md bg-blue-900" />
+        <div className="w-8 h-8 rounded-md bg-blue-800" />
+        <div className="w-8 h-8 rounded-md bg-blue-700" />
+        <div className="w-8 h-8 rounded-md bg-blue-600" />
+        <div className="w-8 h-8 rounded-md bg-blue-500" />
+        <div className="w-8 h-8 rounded-md bg-blue-400" />
+        <div className="w-8 h-8 rounded-md bg-blue-300" />
+        <div className="w-8 h-8 rounded-md bg-blue-200" />
+        <div className="w-8 h-8 rounded-md bg-blue-100" />
+        <div className="w-8 h-8 rounded-md bg-blue-50" />
       </div>
-      <div className="color-scale">
-        <div className="color yellow-900" />
-        <div className="color yellow-700" />
-        <div className="color yellow-500" />
-        <div className="color yellow-400" />
-        <div className="color yellow-300" />
-        <div className="color yellow-200" />
-        <div className="color yellow-100" />
-        <div className="color yellow-50" />
+      <div className="mb-2 flex space-x-1">
+        <div className="w-8 h-8 rounded-md bg-yellow-900" />
+        <div className="w-8 h-8 rounded-md bg-yellow-800" />
+        <div className="w-8 h-8 rounded-md bg-yellow-700" />
+        <div className="w-8 h-8 rounded-md bg-yellow-600" />
+        <div className="w-8 h-8 rounded-md bg-yellow-500" />
+        <div className="w-8 h-8 rounded-md bg-yellow-400" />
+        <div className="w-8 h-8 rounded-md bg-yellow-300" />
+        <div className="w-8 h-8 rounded-md bg-yellow-200" />
+        <div className="w-8 h-8 rounded-md bg-yellow-100" />
+        <div className="w-8 h-8 rounded-md bg-yellow-50" />
       </div>
 
-      <h1>Heading 1</h1>
-      <h2>Heading 2</h2>
-      <h3>Heading 3</h3>
-      <h4>Heading 4</h4>
-      <h5>Heading 5</h5>
-      <h6>Heading 6</h6>
-      <p>General Text Paragraph</p>
-      <p className="info">Info Text</p>
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Font Sizes</h2>
+
+      <div className="flex flex-y space-y-2">
+        <span className="text-xs">text-xs</span>
+        <span className="text-sm">text-sm</span>
+        <span className="text-base">text-base</span>
+        <span className="text-lg">text-lg</span>
+        <span className="text-xl">text-xl</span>
+        <span className="text-2xl">text-2xl</span>
+      </div>
+
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Segment</h2>
 
       <Segment>
-        <h2>The title</h2>
-        <p>The content goes here</p>
+        <p>Single Segment</p>
       </Segment>
 
       <Segments>
@@ -179,22 +190,35 @@ const UIToolkitPage = () => {
         </Segment>
       </Segments>
 
-      <List>
-        <ListItem>
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Avatar</h2>
+
+      <div className="flex flex-y space-y-2 mb-2 mt-2">
+        <div className="flex space-x-2">
+          <Avatar user={jonSnow} size="large" />
+          <Avatar user={jonSnow} size="normal" />
+          <Avatar user={jonSnow} size="small" />
+        </div>
+      </div>
+
+      <h2 className="text-2xl mt-16 mb-6 font-medium">User Name</h2>
+
+      <div className="flex flex-y space-y-2 mb-2 mt-2">
+        <div className="flex space-x-2">
           <Avatar user={jonSnow} /> <UserName user={jonSnow} />
-        </ListItem>
-        <ListItem>
+        </div>
+        <div className="flex space-x-2">
           <Avatar user={aryaStark} /> <UserName user={aryaStark} />
-        </ListItem>
-      </List>
+        </div>
+      </div>
+
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Heading</h2>
 
       <Heading title="Page Heading" icon={FaCogs} subtitle="This is a page heading" />
 
-      <Heading title="Section Heading" icon={FaRegLightbulb} subtitle="This is a page heading" size="small" dividing={true} />
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Buttons</h2>
 
-      <h1>Buttons</h1>
-      <List>
-        <ListItem>
+      <div className="flex flex-y space-y-2 mb-2 mt-2">
+        <div className="flex space-x-2 mb-2 mt-2">
           <Button size="large">
             <FaRegLightbulb /> Large Icon
           </Button>
@@ -208,9 +232,9 @@ const UIToolkitPage = () => {
           <Button color="cancel" size="large">
             Large Cancel
           </Button>
-        </ListItem>
+        </div>
 
-        <ListItem>
+        <div className="flex space-x-2 mb-2 mt-2">
           <Button size="normal">
             <FaRegLightbulb /> Normal Icon
           </Button>
@@ -224,9 +248,9 @@ const UIToolkitPage = () => {
           <Button color="cancel" size="normal">
             Normal Cancel
           </Button>
-        </ListItem>
+        </div>
 
-        <ListItem>
+        <div className="flex space-x-2 mb-2 mt-2">
           <Button size="small">
             <FaRegLightbulb /> Small Icon
           </Button>
@@ -240,9 +264,9 @@ const UIToolkitPage = () => {
           <Button color="cancel" size="small">
             Small Cancel
           </Button>
-        </ListItem>
+        </div>
 
-        <ListItem>
+        <div className="flex space-x-2 mb-2 mt-2">
           <Button size="tiny">
             <FaRegLightbulb /> Tiny Icon
           </Button>
@@ -256,9 +280,9 @@ const UIToolkitPage = () => {
           <Button color="cancel" size="tiny">
             Tiny Cancel
           </Button>
-        </ListItem>
+        </div>
 
-        <ListItem>
+        <div className="flex space-x-2 mb-2 mt-2">
           <Button size="mini">
             <FaRegLightbulb /> Mini Icon
           </Button>
@@ -272,9 +296,9 @@ const UIToolkitPage = () => {
           <Button color="cancel" size="mini">
             Mini Cancel
           </Button>
-        </ListItem>
+        </div>
 
-        <ListItem>
+        <div className="flex space-x-2 mb-2 mt-2">
           <Button href="#">
             <FaRegLightbulb /> Link
           </Button>
@@ -285,9 +309,9 @@ const UIToolkitPage = () => {
           <Button href="#" color="danger">
             Link
           </Button>
-        </ListItem>
+        </div>
 
-        <ListItem>
+        <div className="flex space-x-2 mb-2 mt-2">
           <Button disabled={true}>
             <FaRegLightbulb /> Default
           </Button>
@@ -298,9 +322,9 @@ const UIToolkitPage = () => {
           <Button disabled={true} color="danger">
             Danger
           </Button>
-        </ListItem>
+        </div>
 
-        <ListItem>
+        <div className="flex space-x-2 mb-2 mt-2">
           <Button onClick={showLoading}>
             <FaRegLightbulb /> Loading
           </Button>
@@ -311,79 +335,64 @@ const UIToolkitPage = () => {
           <Button color="danger" onClick={showLoading}>
             Loading
           </Button>
-        </ListItem>
-      </List>
+        </div>
+      </div>
 
-      <h1>Toggle</h1>
-      <List>
-        <ListItem>
-          <Toggle active={true} label="Active" />
-        </ListItem>
-        <ListItem>
-          <Toggle active={false} label="Inactive" />
-        </ListItem>
-        <ListItem>
-          <Toggle active={true} disabled={true} label="Disabled" />
-        </ListItem>
-      </List>
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Toggle</h2>
 
-      <h1>Statuses</h1>
-      <List>
-        <ListItem>
-          <ShowPostStatus status={PostStatus.Open} />
-        </ListItem>
-        <ListItem>
-          <ShowPostStatus status={PostStatus.Planned} />
-        </ListItem>
-        <ListItem>
-          <ShowPostStatus status={PostStatus.Started} />
-        </ListItem>
-        <ListItem>
-          <ShowPostStatus status={PostStatus.Duplicate} />
-        </ListItem>
-        <ListItem>
-          <ShowPostStatus status={PostStatus.Completed} />
-        </ListItem>
-        <ListItem>
-          <ShowPostStatus status={PostStatus.Declined} />
-        </ListItem>
-      </List>
+      <div className="flex flex-y space-y-2 mb-2 mt-2">
+        <Toggle active={true} label="Active" />
+        <Toggle active={false} label="Inactive" />
+        <Toggle active={true} disabled={true} label="Disabled" />
+      </div>
 
-      <h1>Tags</h1>
-      <List>
-        <ListItem>
-          <ShowTag tag={easyTag} />
-          <ShowTag tag={hardTag} />
-          <ShowTag tag={easyTag} circular={true} />
-          <ShowTag tag={hardTag} circular={true} />
-        </ListItem>
-      </List>
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Statuses</h2>
 
-      <h1>Notification</h1>
-      <List>
-        <ListItem>
-          <Button onClick={notifySuccess}>Success</Button>
-          <Button onClick={notifyError}>Error</Button>
-        </ListItem>
-      </List>
+      <div className="flex flex-y space-y-2 mb-2 mt-2">
+        <ShowPostStatus status={PostStatus.Open} />
+        <ShowPostStatus status={PostStatus.Planned} />
+        <ShowPostStatus status={PostStatus.Started} />
+        <ShowPostStatus status={PostStatus.Duplicate} />
+        <ShowPostStatus status={PostStatus.Completed} />
+        <ShowPostStatus status={PostStatus.Declined} />
+      </div>
 
-      <h1>Moment</h1>
-      <List>
-        <ListItem>
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Tags</h2>
+
+      <div className="flex space-x-2 mb-2 mt-2">
+        <ShowTag tag={easyTag} />
+        <ShowTag tag={hardTag} />
+        <ShowTag tag={easyTag} circular={true} />
+        <ShowTag tag={hardTag} circular={true} />
+      </div>
+
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Notification</h2>
+
+      <div className="flex space-x-2 mb-2 mt-2">
+        <Button onClick={notifySuccess}>Success</Button>
+        <Button onClick={notifyError}>Error</Button>
+      </div>
+
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Date/Time</h2>
+
+      <div className="flex flex-y space-y-2 mb-2 mt-2">
+        <div>
           Relative: <Moment date="2017-06-03T16:55:06.815042Z" format="relative" />
-        </ListItem>
-        <ListItem>
+        </div>
+        <div>
           Short: <Moment date="2017-06-03T16:55:06.815042Z" format="short" />
-        </ListItem>
-        <ListItem>
+        </div>
+        <div>
           Full: <Moment date="2017-06-03T16:55:06.815042Z" format="full" />
-        </ListItem>
-      </List>
+        </div>
+      </div>
 
-      <h1>Loader</h1>
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Loader</h2>
+
       <Loader />
 
-      <h1>Message Box</h1>
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Message Box</h2>
+
       <Message showIcon={true} type="error">
         Something went wrong.
       </Message>
@@ -394,15 +403,18 @@ const UIToolkitPage = () => {
         Your order has been confirmed.
       </Message>
 
-      <h1>Hints</h1>
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Hints</h2>
+
       <Hint permanentCloseKey="ui-toolkip-example">Did you know that you can close this permanently?</Hint>
       <Hint>You can&apos;t close this one :)</Hint>
 
-      <h1>Form</h1>
+      <h2 className="text-2xl mt-16 mb-6 font-medium">Form</h2>
+
       <Form error={error}>
         <Input label="Title" field="title">
           <p className="info">This is the explanation for the field above.</p>
         </Input>
+        <Input field="search" placeholder="Search..." icon={FaSearch} />
         <Input label="Disabled!" field="unamed" disabled={true} value={"you can't change this!"} />
         <Input label="Name" field="name" placeholder={"Your name goes here..."} />
         <Input label="Subdomain" field="subdomain" suffix="fider.io" />
@@ -480,11 +492,6 @@ const UIToolkitPage = () => {
 
         <Button onClick={forceError}>Save</Button>
       </Form>
-
-      <Segment>
-        <h1>Search</h1>
-        <Input field="search" placeholder="Search..." icon={FaSearch} />
-      </Segment>
     </div>
   )
 }

@@ -37,7 +37,7 @@
       padding: 5px 0px 0px 5px;
     }
     .info.clickable {
-      color: $link-color;
+      color: $blue-500;
     }
   }
 
@@ -58,7 +58,6 @@
     resize: none !important;
     border: 1px solid $gray-300;
     border-radius: 3px;
-
 
     &:disabled {
       opacity: 0.45;
@@ -134,7 +133,7 @@
     label {
       display: inline-block;
       margin-left: 5px;
-      font-size: $font-size-small;
+      font-size: $font-size-sm;
       font-weight: 500;
       cursor: pointer;
     }
@@ -144,7 +143,7 @@
 .c-form-field-error {
   color: $red-400;
   font-weight: bold;
-  font-size: $font-size-small;
+  font-size: $font-size-sm;
   margin: 0 0 10px 0;
   ul {
     list-style: none;

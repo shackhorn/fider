@@ -1,0 +1,44 @@
+@each $name, $color in $gray-scale {
+  &.text-gray-#{$name} {
+    color: $color;
+  }
+  &.bg-gray-#{$name} {
+    background-color: $color;
+  }
+}
+
+@each $name, $color in $green-scale {
+  &.text-green-#{$name} {
+    color: $color;
+  }
+  &.bg-green-#{$name} {
+    background-color: $color;
+  }
+}
+
+@each $name, $color in $yellow-scale {
+  &.text-yellow-#{$name} {
+    color: $color;
+  }
+  &.bg-yellow-#{$name} {
+    background-color: $color;
+  }
+}
+
+@each $name, $color in $red-scale {
+  &.text-red-#{$name} {
+    color: $color;
+  }
+  &.bg-red-#{$name} {
+    background-color: $color;
+  }
+}
+
+@each $name, $color in $blue-scale {
+  &.text-blue-#{$name} {
+    color: $color;
+  }
+  &.bg-blue-#{$name} {
+    background-color: $color;
+  }
+}

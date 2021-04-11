@@ -1,7 +1,6 @@
 @import "~@fider/assets/styles/variables.scss";
 
 .c-comment-list {
-
   .c-comment {
     margin: 20px 0 0 0;
     display: flex;
@@ -23,7 +22,7 @@
         .c-comment-author {
           .c-comment-metadata {
             display: inline-block;
-            font-size: $font-size-tiny;
+            font-size: $font-size-xs;
             color: $gray-700;
           }
         }

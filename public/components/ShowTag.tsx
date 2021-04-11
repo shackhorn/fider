@@ -30,7 +30,8 @@ const textColor = (color: string) => {
 export const ShowTag = (props: TagProps) => {
   const className = classSet({
     "c-tag": true,
-    "m-circular": props.circular === true,
+    "w-3 h-3 p-0": props.circular === true,
+    "h-5": !props.circular,
   })
 
   return (

@@ -1,0 +1,18 @@
+@for $i from 0 through 12 {
+  .w-#{$i} {
+    width: $sizing-inc * $i;
+  }
+  .h-#{$i} {
+    height: $sizing-inc * $i;
+  }
+}
+
+@for $i from 14 through 40 {
+  .w-#{$i} {
+    width: $sizing-inc * $i;
+  }
+  .h-#{$i} {
+    height: $sizing-inc * $i;
+  }
+  $i: $i + 1;
+}

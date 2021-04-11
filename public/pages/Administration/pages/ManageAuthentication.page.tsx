@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Segment, List, ListItem, Button, Heading, OAuthProviderLogo } from "@fider/components"
+import { Segment, List, ListItem, Button, OAuthProviderLogo } from "@fider/components"
 import { OAuthConfig, OAuthProviderOption } from "@fider/models"
 import { OAuthForm } from "../components/OAuthForm"
 import { actions, notify, Fider } from "@fider/services"
@@ -68,11 +68,8 @@ export default class ManageAuthenticationPage extends AdminBasePage<ManageAuthen
 
     return (
       <>
-        <Heading
-          title="OAuth Providers"
-          subtitle="You can use these section to add any authentication provider thats supports the OAuth2 protocol."
-          size="small"
-        />
+        <h2 className="text-2xl font-medium">OAuth Providers</h2>
+        <p className="info">You can use these section to add any authentication provider thats supports the OAuth2 protocol.</p>
         <p className="info">
           Additional information is available in our{" "}
           <a rel="noopener" target="_blank" href="https://getfider.com/docs/configuring-oauth/">

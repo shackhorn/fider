@@ -4,7 +4,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: $font-size-tiny;
+  font-size: $font-size-xs;
   color: $gray-900;
   font-weight: 500;
   border-radius: 10px;
@@ -20,13 +20,5 @@
   &:last-child {
     margin-top: 0;
     margin-bottom: 0;
-  }
-
-  &.m-circular {
-    min-height: 0;
-    min-width: 0;
-    overflow: hidden;
-    border-radius: 50%;
-    padding: 6px;
   }
 }

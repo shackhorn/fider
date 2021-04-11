@@ -144,7 +144,7 @@ export default class SignUpPage extends React.Component<any, SignUpPageState> {
         {modal}
         <img className="logo" alt="Logo" src="https://getfider.com/images/logo-100x100.png" />
 
-        <h3>1. Who are you?</h3>
+        <h3 className="text-xl font-medium">1. Who are you?</h3>
         <DisplayError fields={["token"]} error={this.state.error} />
 
         {this.user ? (
@@ -162,7 +162,7 @@ export default class SignUpPage extends React.Component<any, SignUpPageState> {
           </>
         )}
 
-        <h3>2. What is this Feedback Forum for?</h3>
+        <h3 className="text-xl font-medium">2. What is this Feedback Forum for?</h3>
 
         <Form error={this.state.error}>
           <Input field="tenantName" maxLength={60} onChange={this.setTenantName} placeholder="your company or product name" />
@@ -182,7 +182,7 @@ export default class SignUpPage extends React.Component<any, SignUpPageState> {
           )}
         </Form>
 
-        <h3>3. Review</h3>
+        <h3 className="text-xl font-medium">3. Review</h3>
 
         <p>Make sure information provided above is correct.</p>
 

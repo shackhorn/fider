@@ -55,12 +55,12 @@
     }
 
     &.m-active {
-      color: $admin-color;
-      border-left: 2px solid $admin-color;
+      color: $primary-color;
+      border-left: 2px solid $primary-color;
       font-weight: 600;
       background-color: $white;
       &:hover {
-        color: $admin-color;
+        color: $primary-color;
       }
     }
   }

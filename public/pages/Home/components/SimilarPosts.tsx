@@ -59,7 +59,7 @@ export class SimilarPosts extends React.Component<SimilarPostsProps, SimilarPost
   public render() {
     return (
       <>
-        <Heading title="Similar posts" subtitle="Consider voting on existing posts instead." icon={FaRegLightbulb} size="small" dividing={true} />
+        <Heading title="Similar posts" subtitle="Consider voting on existing posts instead." icon={FaRegLightbulb} />
         {this.state.loading ? (
           <Loader />
         ) : (
