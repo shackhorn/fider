@@ -2,14 +2,14 @@ import "./MySettings.page.scss"
 
 import React from "react"
 
-import { Modal, Form, Button, Heading, Input, Select, SelectOption, ImageUploader } from "@fider/components"
+import { Modal, Form, Button, Input, Select, SelectOption, ImageUploader } from "@fider/components"
 
 import { UserSettings, UserAvatarType, ImageUpload } from "@fider/models"
 import { Failure, actions, Fider } from "@fider/services"
-import { FaRegAddressCard } from "react-icons/fa"
 import { NotificationSettings } from "./components/NotificationSettings"
 import { APIKeyForm } from "./components/APIKeyForm"
 import { DangerZone } from "./components/DangerZone"
+import { PageTitle } from "@fider/components/common/layout"
 
 interface MySettingsPageState {
   showModal: boolean
@@ -129,7 +129,7 @@ export default class MySettingsPage extends React.Component<MySettingsPageProps,
           </Modal.Content>
         </Modal.Window>
 
-        <Heading title="Settings" subtitle="Manage your profile settings" icon={FaRegAddressCard} />
+        <PageTitle title="Settings" subtitle="Manage your profile settings" />
 
         <div className="row">
           <div className="col-lg-7">

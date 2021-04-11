@@ -5,6 +5,8 @@ import { Header, Loader } from "@fider/components/common"
 import { ErrorBoundary } from "@fider/components"
 import { classSet, Fider, FiderContext, actions } from "@fider/services"
 import { IconContext } from "react-icons"
+
+import "@fider/assets/styles/tailwind.css"
 import "@fider/assets/styles/index.scss"
 
 const Loading = () => (

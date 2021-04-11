@@ -1,13 +1,11 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path")
-const glob = require("glob")
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
 const publicFolder = path.resolve(__dirname, "public")
-const PurgecssPlugin = require("purgecss-webpack-plugin")
 
 const isProduction = process.env.NODE_ENV === "production"
 
@@ -31,14 +29,6 @@ const plugins = [
     },
   }),
 ]
-
-if (isProduction) {
-  plugins.push(
-    new PurgecssPlugin({
-      paths: glob.sync(`./public/**/*`, { nodir: true }),
-    })
-  )
-}
 
 // On Development Mode, we allow Assets to be up to 14 times bigger than on Production Mode
 const maxSizeFactor = isProduction ? 1 : 14
@@ -69,8 +59,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(css|scss)$/,
+        test: /\.(scss)$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(css)$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
         test: /\.(ts|tsx)$/,

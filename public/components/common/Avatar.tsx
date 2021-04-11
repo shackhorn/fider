@@ -1,5 +1,3 @@
-import "./Avatar.scss"
-
 import React from "react"
 import { classSet } from "@fider/services"
 
@@ -15,10 +13,10 @@ export const Avatar = (props: AvatarProps) => {
   const size = props.size || "normal"
 
   const className = classSet({
-    "c-avatar": true,
-    "c-avatar__small": size === "small",
-    "c-avatar__normal": size === "normal",
-    "c-avatar__large": size === "large",
+    "c-avatar rounded-full inline-block": true,
+    "w-6 h-6": size === "small",
+    "w-8 h-8": size === "normal",
+    "w-10 h-10": size === "large",
   })
 
   return <img className={className} alt={props.user.name} src={`${props.user.avatarURL}?size=50`} />

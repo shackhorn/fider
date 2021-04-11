@@ -1,7 +1,7 @@
 import React from "react"
-import { Heading } from "@fider/components"
 import { SideMenu, SideMenuToggler } from "./SideMenu"
 import { IconType } from "react-icons"
+import { PageTitle } from "@fider/components/common/layout"
 
 export abstract class AdminBasePage<P, S> extends React.Component<P, S> {
   public abstract id: string
@@ -21,7 +21,7 @@ export abstract class AdminBasePage<P, S> extends React.Component<P, S> {
   public render() {
     return (
       <div id={this.id} className="page container">
-        <Heading title={this.title} icon={this.icon} subtitle={this.subtitle} />
+        <PageTitle title={this.title} subtitle={this.subtitle} />
         <SideMenuToggler onToggle={this.toggleSideMenu} />
 
         <div className="row">
