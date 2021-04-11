@@ -1,8 +1,6 @@
-import "./ListPosts.scss"
-
 import React from "react"
 import { Post, Tag, CurrentUser } from "@fider/models"
-import { ShowTag, ShowPostResponse, VoteCounter, MultiLineText, ListItem, List } from "@fider/components"
+import { ShowTag, ShowPostResponse, VoteCounter, MultiLineText } from "@fider/components"
 import { FaRegComments } from "react-icons/fa"
 
 interface ListPostsProps {
@@ -13,24 +11,26 @@ interface ListPostsProps {
 
 const ListPostItem = (props: { post: Post; user?: CurrentUser; tags: Tag[] }) => {
   return (
-    <ListItem>
+    <div className="flex">
       <VoteCounter post={props.post} />
-      <div className="c-list-item-content">
-        {props.post.commentsCount > 0 && (
-          <div className="info right">
-            {props.post.commentsCount} <FaRegComments />
-          </div>
-        )}
-        <a className="c-list-item-title text-lg font-medium" href={`/posts/${props.post.number}/${props.post.slug}`}>
-          {props.post.title}
-        </a>
-        <MultiLineText className="c-list-item-description" maxLength={300} text={props.post.description} style="plainText" />
+      <div className="self-center">
+        <div className="flex flex-x justify-between">
+          <a className="text-gray-900 hover:text-primary text-lg font-medium" href={`/posts/${props.post.number}/${props.post.slug}`}>
+            {props.post.title}
+          </a>
+          {props.post.commentsCount > 0 && (
+            <div className="info">
+              {props.post.commentsCount} <FaRegComments />
+            </div>
+          )}
+        </div>
+        <MultiLineText className="mt-2" maxLength={300} text={props.post.description} style="plainText" />
         <ShowPostResponse showUser={false} status={props.post.status} response={props.post.response} />
         {props.tags.map((tag) => (
           <ShowTag key={tag.id} tag={tag} />
         ))}
       </div>
-    </ListItem>
+    </div>
   )
 }
 
@@ -44,10 +44,10 @@ export const ListPosts = (props: ListPostsProps) => {
   }
 
   return (
-    <List className="c-post-list" divided={true}>
+    <div className="flex flex-y space-y-8">
       {props.posts.map((post) => (
         <ListPostItem key={post.id} post={post} tags={props.tags.filter((tag) => post.tags.indexOf(tag.slug) >= 0)} />
       ))}
-    </List>
+    </div>
   )
 }

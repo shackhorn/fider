@@ -1,4 +1,3 @@
-import "./Home.page.scss"
 import NoDataIllustration from "@fider/assets/images/undraw-no-data.svg"
 
 import React, { useState } from "react"
@@ -58,12 +57,12 @@ const HomePage = (props: HomePageProps) => {
   return (
     <div id="p-home" className="page container">
       <div className="row">
-        <div className="l-welcome-col col-md-4">
-          <MultiLineText className="welcome-message" text={fider.session.tenant.welcomeMessage || defaultWelcomeMessage} style="full" />
+        <div className="col-md-4">
+          <MultiLineText text={fider.session.tenant.welcomeMessage || defaultWelcomeMessage} style="full" />
           <PostInput placeholder={fider.session.tenant.invitation || "Enter your suggestion here..."} onTitleChanged={setTitle} />
           <PoweredByFider />
         </div>
-        <div className="l-posts-col col-md-8">
+        <div className="col-md-8">
           {isLonely() ? (
             <Lonely />
           ) : title ? (

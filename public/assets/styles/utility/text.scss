@@ -1,5 +1,8 @@
 // Font Size
 
+.text-2xs {
+  font-size: $font-size-2xs;
+}
 .text-xs {
   font-size: $font-size-xs;
 }
@@ -53,4 +56,10 @@
 
 .text-center {
   text-align: center;
+}
+
+// Transform
+
+.uppercase {
+  text-transform: uppercase;
 }

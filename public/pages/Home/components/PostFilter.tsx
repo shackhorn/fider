@@ -1,5 +1,3 @@
-import "./PostFilter.scss"
-
 import React from "react"
 import { PostStatus } from "@fider/models"
 import { DropDown, DropDownItem } from "@fider/components"
@@ -34,9 +32,9 @@ export const PostFilter = (props: PostFilterProps) => {
       label: s.title,
       value: s.value,
       render: (
-        <span>
-          {s.title} <a className="counter">{props.countPerStatus[s.value]}</a>
-        </span>
+        <>
+          {s.title} <span className="bg-gray-200 text-2xs px-2 ml-2 text-center inline-block rounded-full">{props.countPerStatus[s.value]}</span>
+        </>
       ),
     })
   })
@@ -45,17 +43,9 @@ export const PostFilter = (props: PostFilterProps) => {
   const activeView = viewExists ? props.activeView : "trending"
 
   return (
-    <div>
-      <span className="subtitle">View</span>
-      <DropDown
-        header="What do you want to see?"
-        className="l-post-filter"
-        inline={true}
-        style="simple"
-        items={options}
-        defaultValue={activeView}
-        onChange={handleChangeView}
-      />
-    </div>
+    <>
+      <span className="uppercase text-xs text-gray-700 font-medium">View</span>
+      <DropDown header="What do you want to see?" inline={true} style="simple" items={options} defaultValue={activeView} onChange={handleChangeView} />
+    </>
   )
 }

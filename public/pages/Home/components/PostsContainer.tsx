@@ -1,7 +1,7 @@
 import React from "react"
 
 import { Post, Tag, CurrentUser } from "@fider/models"
-import { Loader, Field, Input } from "@fider/components"
+import { Loader, Input } from "@fider/components"
 import { actions, navigator, querystring } from "@fider/services"
 import { FaTimes, FaSearch } from "react-icons/fa"
 import { PostFilter } from "./PostFilter"
@@ -98,16 +98,14 @@ export class PostsContainer extends React.Component<PostsContainerProps, PostsCo
     const showMoreLink = this.getShowMoreLink()
     return (
       <>
-        <div className="row">
+        <div className="flex flex-center justify-between mb-4">
           {!this.state.query && (
-            <div className="l-filter-col col-7 col-md-8 col-lg-9 mb-2">
-              <Field>
-                <PostFilter activeView={this.state.view} viewChanged={this.handleViewChanged} countPerStatus={this.props.countPerStatus} />
-                <TagsFilter tags={this.props.tags} selectionChanged={this.handleTagsFilterChanged} defaultSelection={this.state.tags} />
-              </Field>
+            <div className="flex flex-center pl-4">
+              <PostFilter activeView={this.state.view} viewChanged={this.handleViewChanged} countPerStatus={this.props.countPerStatus} />
+              <TagsFilter tags={this.props.tags} selectionChanged={this.handleTagsFilterChanged} defaultSelection={this.state.tags} />
             </div>
           )}
-          <div className={!this.state.query ? `l-search-col col-5 col-md-4 col-lg-3 mb-2` : "col-sm-12 mb-2"}>
+          <div className={this.state.query ? "w-full" : ""}>
             <Input
               field="query"
               icon={this.state.query ? FaTimes : FaSearch}

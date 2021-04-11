@@ -1,44 +1,52 @@
+.text-primary {
+  color: $primary-color;
+}
+
+.hover\:text-primary:hover {
+  color: $primary-color;
+}
+
 @each $name, $color in $gray-scale {
-  &.text-gray-#{$name} {
+  .text-gray-#{$name} {
     color: $color;
   }
-  &.bg-gray-#{$name} {
+  .bg-gray-#{$name} {
     background-color: $color;
   }
 }
 
 @each $name, $color in $green-scale {
-  &.text-green-#{$name} {
+  .text-green-#{$name} {
     color: $color;
   }
-  &.bg-green-#{$name} {
+  .bg-green-#{$name} {
     background-color: $color;
   }
 }
 
 @each $name, $color in $yellow-scale {
-  &.text-yellow-#{$name} {
+  .text-yellow-#{$name} {
     color: $color;
   }
-  &.bg-yellow-#{$name} {
+  .bg-yellow-#{$name} {
     background-color: $color;
   }
 }
 
 @each $name, $color in $red-scale {
-  &.text-red-#{$name} {
+  .text-red-#{$name} {
     color: $color;
   }
-  &.bg-red-#{$name} {
+  .bg-red-#{$name} {
     background-color: $color;
   }
 }
 
 @each $name, $color in $blue-scale {
-  &.text-blue-#{$name} {
+  .text-blue-#{$name} {
     color: $color;
   }
-  &.bg-blue-#{$name} {
+  .bg-blue-#{$name} {
     background-color: $color;
   }
 }
