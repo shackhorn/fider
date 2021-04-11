@@ -3,11 +3,9 @@ import NoDataIllustration from "@fider/assets/images/undraw-no-data.svg"
 
 import React, { useState } from "react"
 import { Post, Tag, PostStatus } from "@fider/models"
-import { MultiLineText, Hint, PoweredByFider } from "@fider/components"
-import { SimilarPosts } from "./components/SimilarPosts"
-import { PostInput } from "./components/PostInput"
-import { PostsContainer } from "./components/PostsContainer"
+import { MultiLineText, Hint } from "@fider/components"
 import { useFider } from "@fider/hooks"
+import { PostInput, PoweredByFider, SimilarPosts, PostsContainer } from "./components"
 
 export interface HomePageProps {
   posts: Post[]

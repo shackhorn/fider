@@ -17,9 +17,6 @@ const plugins = [
     chunkFilename: "css/[name].[contenthash].css",
   }),
   new ForkTsCheckerWebpackPlugin(),
-  new PurgecssPlugin({
-    paths: glob.sync(`./public/**/*`, { nodir: true }),
-  }),
   new BundleAnalyzerPlugin({
     analyzerMode: "disabled", // To visualize the treemap of dependencies, change "disabled" to "static" and remove statsOptions
     generateStatsFile: true,
@@ -34,6 +31,14 @@ const plugins = [
     },
   }),
 ]
+
+if (isProduction) {
+  plugins.push(
+    new PurgecssPlugin({
+      paths: glob.sync(`./public/**/*`, { nodir: true }),
+    })
+  )
+}
 
 // On Development Mode, we allow Assets to be up to 14 times bigger than on Production Mode
 const maxSizeFactor = isProduction ? 1 : 14
@@ -94,6 +99,7 @@ module.exports = {
           chunks: "all",
           name: "common",
           test: /[\\/]public[\\/](components|services|models)[\\/]/,
+          enforce: true,
         },
         markdown: {
           chunks: "all",

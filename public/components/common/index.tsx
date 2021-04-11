@@ -30,7 +30,6 @@ export * from "./Logo"
 export * from "./Toggle"
 export * from "./FiderVersion"
 export * from "./DropDown"
-export * from "./PoweredByFider"
 
 import Textarea from "react-textarea-autosize"
 export { Textarea }
