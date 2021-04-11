@@ -1,7 +1,7 @@
 import "./Header.scss"
 
 import React, { useState, useEffect } from "react"
-import { SignInModal, EnvironmentInfo, Avatar, TenantLogo } from "@fider/components"
+import { SignInModal, DevBanner, Avatar, TenantLogo } from "@fider/components"
 import { actions } from "@fider/services"
 import { FaUser, FaCog, FaCaretDown } from "react-icons/fa"
 import { useFider } from "@fider/hooks"
@@ -60,7 +60,7 @@ export const Header = () => {
   const showRightMenu = fider.session.isAuthenticated || !fider.session.tenant.isPrivate
   return (
     <div id="c-header">
-      <EnvironmentInfo />
+      <DevBanner />
       <SignInModal isOpen={isSignInModalOpen} onClose={hideModal} />
       <div className="c-menu">
         <div className="container">
