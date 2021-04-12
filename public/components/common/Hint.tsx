@@ -1,9 +1,8 @@
-import "./Hint.scss"
-
 import React, { useState } from "react"
-import { FaTimes } from "react-icons/fa"
 
 import { cache } from "@fider/services"
+import { HiOutlineInformationCircle, HiOutlineX } from "react-icons/hi"
+import { HStack } from "./layout"
 
 interface HintProps {
   permanentCloseKey?: string
@@ -24,10 +23,12 @@ export const Hint: React.FC<HintProps> = (props) => {
   if (props.condition === false || isClosed) {
     return null
   }
+
   return (
-    <p className="c-hint">
-      <strong>HINT:</strong> {props.children}
-      {cacheKey && <FaTimes onClick={close} className="close" />}
-    </p>
+    <HStack spacing={2} center={true} className="c-hint p-3 mb-4 border-l-2 text-blue-900 bg-blue-50 border-blue-900">
+      <HiOutlineInformationCircle className="h-8" />
+      <span className="flex-grow">{props.children}</span>
+      {cacheKey && <HiOutlineX className="h-4 text-blue-900 cursor-pointer" onClick={close} />}
+    </HStack>
   )
 }

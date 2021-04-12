@@ -12,9 +12,9 @@ export const Message: React.FunctionComponent<MessageProps> = (props) => {
   const className = classSet({
     "c-message p-3 mb-4 border-l-2": true,
     [`c-message__${props.type}`]: true,
-    "text-green-700 bg-green-50 border-green-500": props.type === "success",
-    "text-yellow-700 bg-yellow-50 border-yellow-500": props.type === "warning",
-    "text-red-700 bg-red-50 border-red-500": props.type === "error",
+    "text-green-900 bg-green-50 border-green-900": props.type === "success",
+    "text-yellow-900 bg-yellow-50 border-yellow-900": props.type === "warning",
+    "text-red-900 bg-red-50 border-red-900": props.type === "error",
   })
 
   const icon =
