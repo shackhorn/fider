@@ -2,6 +2,7 @@ import React from "react"
 import { Post, Tag, CurrentUser } from "@fider/models"
 import { ShowTag, ShowPostResponse, VoteCounter, MultiLineText } from "@fider/components"
 import { FaRegComments } from "react-icons/fa"
+import { VStack } from "@fider/components/common/layout"
 
 interface ListPostsProps {
   posts?: Post[]
@@ -44,10 +45,10 @@ export const ListPosts = (props: ListPostsProps) => {
   }
 
   return (
-    <div className="flex flex-y space-y-8">
+    <VStack spacing={8}>
       {props.posts.map((post) => (
         <ListPostItem key={post.id} post={post} tags={props.tags.filter((tag) => post.tags.indexOf(tag.slug) >= 0)} />
       ))}
-    </div>
+    </VStack>
   )
 }
