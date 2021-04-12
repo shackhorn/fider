@@ -77,7 +77,7 @@ export class ResponseForm extends React.Component<ResponseFormProps, ResponseFor
     }))
 
     const modal = (
-      <Modal.Window isOpen={this.state.showModal} onClose={this.closeModal} center={false} size="large">
+      <Modal.Window isOpen={this.state.showModal} onClose={this.closeModal}>
         <Modal.Content>
           <Form error={this.state.error} className="c-response-form">
             <Select field="status" label="Status" defaultValue={this.state.status} options={options} onChange={this.setStatus} />

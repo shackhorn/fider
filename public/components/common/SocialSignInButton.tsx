@@ -1,6 +1,5 @@
 import React from "react"
 import { Button, OAuthProviderLogo } from "@fider/components/common"
-import { classSet } from "@fider/services"
 
 interface SocialSignInButtonProps {
   option: {
@@ -16,14 +15,16 @@ interface SocialSignInButtonProps {
 export const SocialSignInButton = (props: SocialSignInButtonProps) => {
   const redirectTo = props.redirectTo || window.location.href
   const href = props.option.url ? `${props.option.url}?redirect=${redirectTo}` : undefined
-  const className = classSet({
-    "m-social": true,
-    [`m-${props.option.provider}`]: props.option.provider,
-  })
 
   return (
-    <Button href={href} rel="nofollow" fluid={true} className={className}>
-      {props.option.logoURL ? <img alt={props.option.displayName} src={props.option.logoURL} /> : <OAuthProviderLogo option={props.option} />}
+    <Button href={href} rel="nofollow" fluid={true}>
+      <div className="h-6 mr-2">
+        {props.option.logoURL ? (
+          <img className="h-full" alt={props.option.displayName} src={props.option.logoURL} />
+        ) : (
+          <OAuthProviderLogo option={props.option} />
+        )}
+      </div>
       <span>{props.option.displayName}</span>
     </Button>
   )

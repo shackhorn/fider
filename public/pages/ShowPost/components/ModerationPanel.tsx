@@ -33,7 +33,7 @@ export const ModerationPanel = (props: ModerationPanelProps) => {
   }
 
   const modal = (
-    <Modal.Window isOpen={showConfirmation} onClose={hideModal} center={false} size="large">
+    <Modal.Window isOpen={showConfirmation} onClose={hideModal}>
       <Modal.Content>
         <Form error={error}>
           <TextArea field="text" onChange={setText} value={text} placeholder="Why are you deleting this post? (optional)">

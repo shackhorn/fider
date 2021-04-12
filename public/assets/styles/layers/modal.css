@@ -1,0 +1,14 @@
+@layer components {
+  .c-modal {
+    @apply inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full m-2;
+  }
+  .c-modal__header {
+    @apply text-lg leading-6 font-medium text-gray-900 mx-4 mt-4 sm:mx-6;
+  }
+  .c-modal__content {
+    @apply bg-white mx-4 mt-3 mb-4 sm:m-6 sm:mb-4;
+  }
+  .c-modal__footer {
+    @apply bg-gray-100 px-4 py-3 sm:px-6 sm:flex;
+  }
+}

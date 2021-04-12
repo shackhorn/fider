@@ -36,7 +36,7 @@ export class DangerZone extends React.Component<any, DangerZoneState> {
   public render() {
     return (
       <div className="l-danger-zone">
-        <Modal.Window isOpen={this.state.clicked} center={false} onClose={this.onCancel}>
+        <Modal.Window isOpen={this.state.clicked} onClose={this.onCancel}>
           <Modal.Header>Delete account</Modal.Header>
           <Modal.Content>
             <p>

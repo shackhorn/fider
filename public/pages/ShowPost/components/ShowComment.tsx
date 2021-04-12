@@ -85,7 +85,7 @@ export const ShowComment = (props: ShowCommentProps) => {
 
   const modal = () => {
     return (
-      <Modal.Window isOpen={isDeleteConfirmationModalOpen} onClose={closeModal} center={false} size="small">
+      <Modal.Window isOpen={isDeleteConfirmationModalOpen} onClose={closeModal}>
         <Modal.Header>Delete Comment</Modal.Header>
         <Modal.Content>
           <p>

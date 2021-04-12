@@ -1,5 +1,3 @@
-import "./SignInControl.scss"
-
 import React, { useState } from "react"
 import { SocialSignInButton, Form, Button, Input, Message } from "@fider/components"
 import { device, actions, Failure, isCookieEnabled } from "@fider/services"
@@ -41,28 +39,25 @@ export const SignInControl: React.FunctionComponent<SignInControlProps> = (props
   }
 
   return (
-    <div className="c-signin-control">
+    <div>
       {providersLen > 0 && (
-        <div className="l-signin-social">
-          <div className="row">
-            {fider.settings.oauth.map((o, i) => (
+        <>
+          <div className={fider.settings.oauth.length % 2 === 0 ? "grid gap-4 grid-cols-2" : "grid gap-4 grid-cols-3"}>
+            {fider.settings.oauth.map((o) => (
               <React.Fragment key={o.provider}>
-                {i % 4 === 0 && <div className="col-lf" />}
-                <div className={`col-sm l-provider-${o.provider} l-social-col ${providersLen === 1 ? "l-social-col-100" : ""}`}>
-                  <SocialSignInButton option={o} redirectTo={props.redirectTo} />
-                </div>
+                <SocialSignInButton option={o} redirectTo={props.redirectTo} />
               </React.Fragment>
             ))}
           </div>
-          <p className="info">We will never post to these accounts on your behalf.</p>
-        </div>
+          <p className="text-xs mt-2">We will never post to these accounts on your behalf.</p>
+        </>
       )}
 
       {providersLen > 0 && <div className="c-divider">OR</div>}
 
       {props.useEmail && (
-        <div className="l-signin-email">
-          <p>Enter your email address to sign in</p>
+        <>
+          <p>Enter your email address to sign in.</p>
           <Form error={error}>
             <Input
               field="email"
@@ -77,7 +72,7 @@ export const SignInControl: React.FunctionComponent<SignInControlProps> = (props
               }
             />
           </Form>
-        </div>
+        </>
       )}
     </div>
   )

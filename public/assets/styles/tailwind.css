@@ -1,5 +1,6 @@
 @import "./layers/base.css";
 @import "./layers/button.css";
+@import "./layers/modal.css";
 
 @tailwind base;
 @tailwind utilities;

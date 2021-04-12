@@ -1,5 +1,3 @@
-import "./Modal.scss"
-
 import React, { useEffect, useRef } from "react"
 import ReactDOM from "react-dom"
 import { classSet } from "@fider/services"
@@ -7,14 +5,12 @@ import { classSet } from "@fider/services"
 interface ModalWindowProps {
   className?: string
   isOpen: boolean
-  size?: "small" | "large" | "fluid"
   canClose?: boolean
-  center?: boolean
   onClose: () => void
 }
 
 interface ModalFooterProps {
-  align?: "left" | "center" | "right"
+  align?: "center" | "right"
   children?: React.ReactNode
 }
 
@@ -53,16 +49,16 @@ const ModalWindow: React.FunctionComponent<ModalWindowProps> = (props) => {
   }
 
   const className = classSet({
-    "c-modal-window": true,
+    "c-modal": true,
     [`${props.className}`]: !!props.className,
-    "m-center": props.center,
-    [`m-${props.size}`]: true,
   })
 
   return ReactDOM.createPortal(
-    <div aria-disabled={true} className="c-modal-dimmer" onClick={close}>
-      <div className={className} onClick={swallow}>
-        {props.children}
+    <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div aria-disabled={true} className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity overflow-y-scroll" onClick={close}>
+        <div className={className} onClick={swallow}>
+          {props.children}
+        </div>
       </div>
     </div>,
     root.current
@@ -70,18 +66,17 @@ const ModalWindow: React.FunctionComponent<ModalWindowProps> = (props) => {
 }
 
 ModalWindow.defaultProps = {
-  size: "small",
   canClose: true,
-  center: true,
 }
 
-const Header = (props: { children: React.ReactNode }) => <div className="c-modal-header">{props.children}</div>
-const Content = (props: { children: React.ReactNode }) => <div className="c-modal-content">{props.children}</div>
+const Header = (props: { children: React.ReactNode }) => <div className="c-modal__header">{props.children}</div>
+const Content = (props: { children: React.ReactNode }) => <div className="c-modal__content">{props.children}</div>
 const Footer = (props: ModalFooterProps) => {
   const align = props.align || "right"
   const className = classSet({
-    "c-modal-footer": true,
-    [`m-${align}`]: true,
+    "c-modal__footer": true,
+    "justify-end": align === "right",
+    "justify-center": align === "center",
   })
   return <div className={className}>{props.children}</div>
 }
