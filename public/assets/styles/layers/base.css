@@ -1,6 +1,9 @@
 @layer base {
   .text-caption {
-    @apply text-sm;
+    @apply text-sm text-gray-600;
+  }
+  .text-caption2 {
+    @apply text-sm font-semibold text-gray-500;
   }
   .text-title {
     @apply text-xl;

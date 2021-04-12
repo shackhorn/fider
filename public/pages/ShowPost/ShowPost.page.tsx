@@ -1,5 +1,3 @@
-import "./ShowPost.page.scss"
-
 import React from "react"
 
 import { Comment, Post, Tag, Vote, ImageUpload } from "@fider/models"
@@ -27,6 +25,7 @@ import { NotificationsPanel } from "./components/NotificationsPanel"
 import { ModerationPanel } from "./components/ModerationPanel"
 import { DiscussionPanel } from "./components/DiscussionPanel"
 import { VotesPanel } from "./components/VotesPanel"
+import { HStack, VStack } from "@fider/components/common/layout"
 
 interface ShowPostPageProps {
   post: Post
@@ -91,86 +90,88 @@ export default class ShowPostPage extends React.Component<ShowPostPageProps, Sho
   public render() {
     return (
       <div id="p-show-post" className="page container">
-        <div className="header-col">
-          <List>
-            <ListItem>
+        <div className="grid grid-cols-3">
+          <div className="col-span-full lg:col-span-2">
+            <HStack className="mb-4">
               <VoteCounter post={this.props.post} />
 
-              <div>
+              <VStack>
                 {this.state.editMode ? (
                   <Form error={this.state.error}>
                     <Input field="title" maxLength={100} value={this.state.newTitle} onChange={this.setNewTitle} />
                   </Form>
                 ) : (
-                  <h1 className="text-xl">{this.props.post.title}</h1>
+                  <h1 className="text-title">{this.props.post.title}</h1>
                 )}
 
-                <span className="info">
-                  Posted by <UserName user={this.props.post.user} /> &middot; <Moment date={this.props.post.createdAt} />
-                </span>
-              </div>
-            </ListItem>
-          </List>
+                <HStack center={true} className="text-caption">
+                  <span>Posted by</span> <UserName user={this.props.post.user} /> <span>&middot;</span> <Moment date={this.props.post.createdAt} />
+                </HStack>
+              </VStack>
+            </HStack>
 
-          <span className="subtitle">Description</span>
-          {this.state.editMode ? (
-            <Form error={this.state.error}>
-              <TextArea field="description" value={this.state.newDescription} onChange={this.setNewDescription} />
-              <MultiImageUploader field="attachments" bkeys={this.props.attachments} maxUploads={3} previewMaxWidth={100} onChange={this.setAttachments} />
-            </Form>
-          ) : (
-            <>
-              {this.props.post.description && <MultiLineText className="description" text={this.props.post.description} style="full" />}
-              {!this.props.post.description && <em className="info">No description provided.</em>}
-              {this.props.attachments.map((x) => (
-                <ImageViewer key={x} bkey={x} />
-              ))}
-            </>
-          )}
-          <ShowPostResponse showUser={true} status={this.props.post.status} response={this.props.post.response} />
+            <span className="text-caption2 uppercase">Description</span>
+            {this.state.editMode ? (
+              <Form error={this.state.error}>
+                <TextArea field="description" value={this.state.newDescription} onChange={this.setNewDescription} />
+                <MultiImageUploader field="attachments" bkeys={this.props.attachments} maxUploads={3} previewMaxWidth={100} onChange={this.setAttachments} />
+              </Form>
+            ) : (
+              <>
+                {this.props.post.description && <MultiLineText className="description" text={this.props.post.description} style="full" />}
+                {!this.props.post.description && <div className="text-caption italic">No description provided.</div>}
+                {this.props.attachments.map((x) => (
+                  <ImageViewer key={x} bkey={x} />
+                ))}
+              </>
+            )}
+            <ShowPostResponse showUser={true} status={this.props.post.status} response={this.props.post.response} />
+          </div>
+          <div className="col-span-full row-span-2 lg:col-span-1">
+            <VStack className="lg:ml-20">
+              <VotesPanel post={this.props.post} votes={this.props.votes} />
+
+              {Fider.session.isAuthenticated &&
+                Fider.session.user.isCollaborator && [
+                  <span key={0} className="text-caption2 uppercase">
+                    Actions
+                  </span>,
+                  this.state.editMode ? (
+                    <List key={1}>
+                      <ListItem>
+                        <Button className="save" color="positive" fluid={true} onClick={this.saveChanges}>
+                          <FaSave /> Save
+                        </Button>
+                      </ListItem>
+                      <ListItem>
+                        <Button className="cancel" fluid={true} onClick={this.cancelEdit}>
+                          <FaTimes /> Cancel
+                        </Button>
+                      </ListItem>
+                    </List>
+                  ) : (
+                    <List key={1}>
+                      <ListItem>
+                        <Button className="edit" fluid={true} onClick={this.startEdit}>
+                          <FaEdit /> Edit
+                        </Button>
+                      </ListItem>
+                      <ListItem>
+                        <ResponseForm post={this.props.post} />
+                      </ListItem>
+                    </List>
+                  ),
+                ]}
+
+              <TagsPanel post={this.props.post} tags={this.props.tags} />
+              <NotificationsPanel post={this.props.post} subscribed={this.props.subscribed} />
+              <ModerationPanel post={this.props.post} />
+            </VStack>
+          </div>
+          <div className="col-span-full lg:col-span-2">
+            <DiscussionPanel post={this.props.post} comments={this.props.comments} />
+          </div>
         </div>
-
-        <div className="action-col">
-          <VotesPanel post={this.props.post} votes={this.props.votes} />
-
-          {Fider.session.isAuthenticated &&
-            Fider.session.user.isCollaborator && [
-              <span key={0} className="subtitle">
-                Actions
-              </span>,
-              this.state.editMode ? (
-                <List key={1}>
-                  <ListItem>
-                    <Button className="save" color="positive" fluid={true} onClick={this.saveChanges}>
-                      <FaSave /> Save
-                    </Button>
-                  </ListItem>
-                  <ListItem>
-                    <Button className="cancel" fluid={true} onClick={this.cancelEdit}>
-                      <FaTimes /> Cancel
-                    </Button>
-                  </ListItem>
-                </List>
-              ) : (
-                <List key={1}>
-                  <ListItem>
-                    <Button className="edit" fluid={true} onClick={this.startEdit}>
-                      <FaEdit /> Edit
-                    </Button>
-                  </ListItem>
-                  <ListItem>
-                    <ResponseForm post={this.props.post} />
-                  </ListItem>
-                </List>
-              ),
-            ]}
-
-          <TagsPanel post={this.props.post} tags={this.props.tags} />
-          <NotificationsPanel post={this.props.post} subscribed={this.props.subscribed} />
-          <ModerationPanel post={this.props.post} />
-        </div>
-
-        <DiscussionPanel post={this.props.post} comments={this.props.comments} />
       </div>
     )
   }

@@ -20,14 +20,12 @@ const Lonely = () => {
   const fider = useFider()
 
   return (
-    <div className="l-lonely center">
+    <div className="text-center">
       <Hint permanentCloseKey="at-least-3-posts" condition={fider.session.isAuthenticated && fider.session.user.isAdministrator}>
         It&apos;s recommended that you post <strong>at least 3</strong> suggestions here before sharing this site. The initial content is key to start the
         interactions with your audience.
       </Hint>
-      <p>
-        <img alt="No Posts" height="100" src={NoDataIllustration} />
-      </p>
+      <img alt="No Posts" className="inline h-32" src={NoDataIllustration} />
       <p>No posts have been created yet.</p>
     </div>
   )

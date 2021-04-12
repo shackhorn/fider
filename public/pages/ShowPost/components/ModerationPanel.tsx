@@ -58,7 +58,7 @@ export const ModerationPanel = (props: ModerationPanelProps) => {
   return (
     <>
       {modal}
-      <span className="subtitle">Moderation</span>
+      <span className="text-caption2 uppercase">Moderation</span>
       <List>
         <ListItem>
           <Button color="danger" size="small" fluid={true} onClick={showModal}>

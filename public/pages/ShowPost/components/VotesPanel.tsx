@@ -34,7 +34,7 @@ export const VotesPanel = (props: VotesPanelProps) => {
   return (
     <>
       <VotesModal post={props.post} isOpen={isVotesModalOpen} onClose={closeModal} />
-      <span className="subtitle">Voters</span>
+      <span className="text-caption2 uppercase">Voters</span>
       <div className="l-votes-list">
         {props.votes.map((x) => (
           <Avatar key={x.user.id} user={x.user} />

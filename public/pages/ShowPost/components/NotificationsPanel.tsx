@@ -45,7 +45,7 @@ export const NotificationsPanel = (props: NotificationsPanelProps) => {
 
   return (
     <>
-      <span className="subtitle">Notifications</span>
+      <span className="text-caption2 uppercase">Notifications</span>
       <List>
         <ListItem>
           {button}

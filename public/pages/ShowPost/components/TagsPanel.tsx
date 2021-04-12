@@ -69,7 +69,7 @@ export const TagsPanel = (props: TagsPanelProps) => {
     </List>
   )
 
-  const subtitleClasses = `subtitle ${canEdit && "active"}`
+  const subtitleClasses = `text-caption2 uppercase ${canEdit && "active"}`
   const icon = canEdit && (isEditing ? <FaCheckCircle /> : <FaCog />)
 
   return (
