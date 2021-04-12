@@ -164,18 +164,18 @@ const UIToolkitPage = () => {
         </HStack>
 
         <HStack>
-          <Button size="normal">
-            <FaRegLightbulb /> Normal Icon
+          <Button disabled={true}>
+            <FaRegLightbulb /> Default
           </Button>
-          <Button size="normal">Normal Default</Button>
-          <Button color="positive" size="normal">
-            Normal Positive
+          <Button disabled={true}>Default</Button>
+          <Button disabled={true} color="positive">
+            Positive
           </Button>
-          <Button color="danger" size="normal">
-            Normal Danger
+          <Button disabled={true} color="danger">
+            Danger
           </Button>
-          <Button color="cancel" size="normal">
-            Normal Cancel
+          <Button disabled={true} color="cancel">
+            Cancel
           </Button>
         </HStack>
 
@@ -196,38 +196,6 @@ const UIToolkitPage = () => {
         </HStack>
 
         <HStack>
-          <Button size="tiny">
-            <FaRegLightbulb /> Tiny Icon
-          </Button>
-          <Button size="tiny">Tiny Default</Button>
-          <Button color="positive" size="tiny">
-            Tiny Positive
-          </Button>
-          <Button color="danger" size="tiny">
-            Tiny Danger
-          </Button>
-          <Button color="cancel" size="tiny">
-            Tiny Cancel
-          </Button>
-        </HStack>
-
-        <HStack>
-          <Button size="mini">
-            <FaRegLightbulb /> Mini Icon
-          </Button>
-          <Button size="mini">Mini Default</Button>
-          <Button color="positive" size="mini">
-            Mini Positive
-          </Button>
-          <Button color="danger" size="mini">
-            Mini Danger
-          </Button>
-          <Button color="cancel" size="mini">
-            Mini Cancel
-          </Button>
-        </HStack>
-
-        <HStack>
           <Button href="#">
             <FaRegLightbulb /> Link
           </Button>
@@ -238,18 +206,8 @@ const UIToolkitPage = () => {
           <Button href="#" color="danger">
             Link
           </Button>
-        </HStack>
-
-        <HStack>
-          <Button disabled={true}>
-            <FaRegLightbulb /> Default
-          </Button>
-          <Button disabled={true}>Default</Button>
-          <Button disabled={true} color="positive">
-            Positive
-          </Button>
-          <Button disabled={true} color="danger">
-            Danger
+          <Button href="#" color="cancel">
+            Link
           </Button>
         </HStack>
 

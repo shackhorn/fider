@@ -1,0 +1,94 @@
+@layer components {
+  .c-button {
+    @apply relative inline-flex items-center font-medium rounded;
+  }
+  .c-button:disabled {
+    @apply cursor-not-allowed;
+  }
+
+  .c-button > svg {
+    @apply mr-1;
+  }
+
+  .c-button__positive {
+    @apply border shadow-sm border-transparent bg-green-600 text-white;
+  }
+  .c-button__positive:hover {
+    @apply bg-green-700 text-white;
+  }
+
+  .c-button__danger {
+    @apply border shadow-sm border-transparent bg-red-600 text-white;
+  }
+
+  .c-button__danger:hover {
+    @apply bg-red-800 text-white;
+  }
+
+  .c-button__default {
+    @apply border shadow-sm border-gray-300 bg-gray-50 text-gray-700;
+  }
+
+  .c-button__default:hover {
+    @apply bg-gray-200 text-gray-700;
+  }
+
+  .c-button__cancel {
+    @apply bg-transparent text-gray-700;
+  }
+
+  .c-button__cancel:hover {
+    @apply underline text-gray-900;
+  }
+
+  .c-button__loading {
+    @apply text-transparent;
+  }
+
+  .c-button__loading:hover {
+    @apply text-transparent;
+  }
+
+  .c-button__loading::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    margin: -0.64285714em 0 0 -0.64285714em;
+    width: 1.28571429em;
+    height: 1.28571429em;
+    border-radius: 500rem;
+    border: 0.2em solid rgba(0, 0, 0, 0.15);
+  }
+
+  .c-button__loading::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    margin: -0.64285714em 0 0 -0.64285714em;
+    width: 1.28571429em;
+    height: 1.28571429em;
+    -webkit-animation: button-spin 0.6s linear;
+    animation: button-spin 0.6s linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    border-radius: 500rem;
+    border-color: #fff transparent transparent;
+    border-style: solid;
+    border-width: 0.2em;
+    -webkit-box-shadow: 0 0 0 1px transparent;
+    box-shadow: 0 0 0 1px transparent;
+  }
+
+  @keyframes button-spin {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+}

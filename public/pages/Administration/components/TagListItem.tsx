@@ -65,11 +65,11 @@ export const TagListItem = (props: TagListItemProps) => {
 
   const renderViewMode = () => {
     const buttons = fider.session.user.isAdministrator && [
-      <Button size="mini" key={0} onClick={startDelete} className="right">
+      <Button size="small" key={0} onClick={startDelete} className="right">
         <FaTimes />
         Delete
       </Button>,
-      <Button size="mini" key={1} onClick={startEdit} className="right">
+      <Button size="small" key={1} onClick={startEdit} className="right">
         <FaEdit />
         Edit
       </Button>,

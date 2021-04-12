@@ -9,15 +9,13 @@ interface ButtonProps {
   type?: "button" | "submit"
   color?: "positive" | "danger" | "default" | "cancel"
   fluid?: boolean
-  size?: "mini" | "tiny" | "small" | "normal" | "large"
+  size?: "small" | "default" | "large"
   onClick?: (event: ButtonClickEvent) => Promise<any>
 }
 
 interface ButtonState {
   clicked: boolean
 }
-
-import "./Button.scss"
 
 export class ButtonClickEvent {
   private shouldEnable = true
@@ -33,7 +31,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
   private unmounted = false
 
   public static defaultProps: Partial<ButtonProps> = {
-    size: "small",
+    size: "default",
     fluid: false,
     color: "default",
     type: "button",
@@ -71,13 +69,21 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
   }
 
   public render() {
+    const isDisabled = this.state.clicked || this.props.disabled
+    const isLoading = this.state.clicked
+
     const className = classSet({
       "c-button": true,
-      "m-fluid": this.props.fluid,
-      [`m-${this.props.size}`]: this.props.size,
-      [`m-${this.props.color}`]: this.props.color,
-      "m-loading": this.state.clicked,
-      "m-disabled": this.state.clicked || this.props.disabled,
+      "w-full": this.props.fluid,
+      "c-button__positive": this.props.color === "positive",
+      "c-button__danger": this.props.color === "danger",
+      "c-button__default": this.props.color === "default",
+      "c-button__cancel": this.props.color === "cancel",
+      "c-button__loading": isLoading,
+      "px-2.5 py-1.5 text-xs": this.props.size === "small",
+      "px-3 py-1.5 text-sm": this.props.size === "default",
+      "px-4 py-2": this.props.size === "large",
+      "opacity-50": isDisabled,
       [this.props.className || ""]: this.props.className,
     })
 
@@ -89,13 +95,13 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
       )
     } else if (this.props.onClick) {
       return (
-        <button type={this.props.type} className={className} onClick={this.click}>
+        <button type={this.props.type} disabled={isDisabled} className={className} onClick={this.click}>
           {this.props.children}
         </button>
       )
     } else {
       return (
-        <button type={this.props.type} className={className}>
+        <button type={this.props.type} disabled={isDisabled} className={className}>
           {this.props.children}
         </button>
       )

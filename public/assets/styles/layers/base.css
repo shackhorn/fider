@@ -1,0 +1,25 @@
+@layer base {
+  .text-caption {
+    @apply text-sm;
+  }
+  .text-title {
+    @apply text-xl;
+  }
+  .text-headline {
+    @apply text-2xl font-medium tracking-tight;
+  }
+  .text-display1 {
+    @apply text-3xl font-bold tracking-tight;
+  }
+  .text-display2 {
+    @apply text-4xl font-extrabold tracking-tight;
+  }
+
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    @apply outline-none transition duration-200 ring-2 focus:ring-opacity-75 ring-blue-500;
+  }
+}

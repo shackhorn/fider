@@ -1,5 +1,3 @@
-import "./Toggle.scss"
-
 import React, { useState } from "react"
 import { classSet } from "@fider/services"
 
@@ -26,24 +24,27 @@ export const Toggle: React.StatelessComponent<ToggleProps> = (props) => {
   }
 
   const className = classSet({
-    "c-toggle": true,
+    "c-toggle relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full transition-colors ease-in-out duration-200": true,
+    "bg-gray-200": !active,
+    "bg-green-500": active,
     "cursor-pointer": !props.disabled,
     "cursor-not-allowed": props.disabled,
   })
 
-  const labelClassName = classSet({
-    "align-middle bg-gray-300 inline-block w-8 h-4 rounded-full": true,
-    "cursor-pointer": !props.disabled,
-    "cursor-not-allowed": props.disabled,
+  const switchClassName = classSet({
+    " pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200": true,
+    "translate-x-0": !active,
+    "translate-x-5": active,
   })
 
   return (
-    <span className={className} onClick={toggle}>
-      <input className="hidden" type="checkbox" checked={active} readOnly={true} />
-      <label className={labelClassName}>
-        <span className="switch shadow-md absolute rounded-full bg-gray-100 w-3 h-3 ml-0.5 mt-0.5" />
-      </label>
-      <span className="ml-2 align-middle">{!!props.label && props.label}</span>
-    </span>
+    <div className="flex items-center">
+      <button onClick={toggle} type="button" className={className}>
+        <span aria-hidden="true" className={switchClassName}></span>
+      </button>
+      <span className="ml-3" id="annual-billing-label">
+        {!!props.label && props.label}
+      </span>
+    </div>
   )
 }

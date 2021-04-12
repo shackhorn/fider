@@ -150,10 +150,10 @@ export default class MySettingsPage extends React.Component<MySettingsPageProps,
                 </p>
                 {this.state.changingEmail && (
                   <>
-                    <Button color="positive" size="mini" onClick={this.submitNewEmail}>
+                    <Button color="positive" size="small" onClick={this.submitNewEmail}>
                       Confirm
                     </Button>
-                    <Button color="cancel" size="mini" onClick={this.cancelChangeEmail}>
+                    <Button color="cancel" size="small" onClick={this.cancelChangeEmail}>
                       Cancel
                     </Button>
                   </>

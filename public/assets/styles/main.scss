@@ -137,11 +137,11 @@ a:hover {
   text-align: center;
 }
 
-*:focus {
-  outline: 0;
-  box-shadow: 0 0 0 3px $blue-300;
-  transition: all 0.3s ease;
-}
+// *:focus {
+//   outline: 0;
+//   box-shadow: 0 0 0 3px $blue-300;
+//   transition: all 0.3s ease;
+// }
 
 [type="reset"],
 [type="submit"],
