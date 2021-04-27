@@ -75,6 +75,7 @@ func SendSignInEmail(model *models.SignInByEmail) worker.Task {
 //SendChangeEmailConfirmation is used to send the change email confirmation email to requestor
 func SendChangeEmailConfirmation(model *models.ChangeUserEmail) worker.Task {
 	return describe("Send change email confirmation", func(c *worker.Context) error {
+
 		previous := c.User().Email
 		if previous == "" {
 			previous = "(empty)"
@@ -144,7 +145,7 @@ func NotifyAboutNewPost(post *models.Post) worker.Task {
 			"userName":   c.User().Name,
 			"content":    markdown.Full(post.Description),
 			"postLink":   linkWithText(fmt.Sprintf("#%d", post.Number), web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
-			"view":       linkWithText("View it on your browser", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
+			"view":       linkWithText("view it on your browser", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
 			"change":     linkWithText("change your notification settings", web.BaseURL(c), "/settings"),
 			"logo":       web.LogoURL(c),
 		}
@@ -204,7 +205,7 @@ func NotifyAboutNewComment(post *models.Post, comment *models.NewComment) worker
 			"userName":    c.User().Name,
 			"content":     markdown.Full(comment.Content),
 			"postLink":    linkWithText(fmt.Sprintf("#%d", post.Number), web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
-			"view":        linkWithText("View it on your browser", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
+			"view":        linkWithText("view it on your browser", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
 			"unsubscribe": linkWithText("unsubscribe from it", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
 			"change":      linkWithText("change your notification settings", web.BaseURL(c), "/settings"),
 			"logo":        web.LogoURL(c),
@@ -276,7 +277,7 @@ func NotifyAboutStatusChange(post *models.Post, prevStatus enum.PostStatus) work
 			"content":     markdown.Full(post.Response.Text),
 			"status":      post.Status.Name(),
 			"duplicate":   duplicate,
-			"view":        linkWithText("View it on your browser", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
+			"view":        linkWithText("view it on your browser", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
 			"unsubscribe": linkWithText("unsubscribe from it", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
 			"change":      linkWithText("change your notification settings", web.BaseURL(c), "/settings"),
 			"logo":        web.LogoURL(c),

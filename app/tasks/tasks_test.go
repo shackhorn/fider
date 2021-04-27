@@ -228,7 +228,7 @@ func TestNotifyAboutNewCommentTask(t *testing.T) {
 		"tenantName":  "Demonstration",
 		"userName":    "Arya Stark",
 		"content":     template.HTML("<p>I agree</p>"),
-		"view":        template.HTML("<a href='http://domain.com/posts/1/add-support-for-typescript'>View it on your browser</a>"),
+		"view":        template.HTML("<a href='http://domain.com/posts/1/add-support-for-typescript'>view it on your browser</a>"),
 		"change":      template.HTML("<a href='http://domain.com/settings'>change your notification settings</a>"),
 		"unsubscribe": template.HTML("<a href='http://domain.com/posts/1/add-support-for-typescript'>unsubscribe from it</a>"),
 		"logo":        "https://getfider.com/images/logo-100x100.png",
@@ -299,7 +299,7 @@ func TestNotifyAboutStatusChangeTask(t *testing.T) {
 		"content":     template.HTML("<p>Planned for next release.</p>"),
 		"duplicate":   template.HTML(""),
 		"status":      "planned",
-		"view":        template.HTML("<a href='http://domain.com/posts/1/add-support-for-typescript'>View it on your browser</a>"),
+		"view":        template.HTML("<a href='http://domain.com/posts/1/add-support-for-typescript'>view it on your browser</a>"),
 		"change":      template.HTML("<a href='http://domain.com/settings'>change your notification settings</a>"),
 		"unsubscribe": template.HTML("<a href='http://domain.com/posts/1/add-support-for-typescript'>unsubscribe from it</a>"),
 		"logo":        "https://getfider.com/images/logo-100x100.png",
@@ -440,7 +440,7 @@ func TestNotifyAboutStatusChangeTask_Duplicate(t *testing.T) {
 		"content":     template.HTML(""),
 		"duplicate":   template.HTML("<a href='http://domain.com/posts/1/add-support-for-typescript'>Add support for TypeScript</a>"),
 		"status":      "duplicate",
-		"view":        template.HTML("<a href='http://domain.com/posts/2/i-need-typescript'>View it on your browser</a>"),
+		"view":        template.HTML("<a href='http://domain.com/posts/2/i-need-typescript'>view it on your browser</a>"),
 		"change":      template.HTML("<a href='http://domain.com/settings'>change your notification settings</a>"),
 		"unsubscribe": template.HTML("<a href='http://domain.com/posts/2/i-need-typescript'>unsubscribe from it</a>"),
 		"logo":        "https://getfider.com/images/logo-100x100.png",
@@ -472,8 +472,8 @@ func TestSendInvites(t *testing.T) {
 
 	worker := mock.NewWorker()
 	task := tasks.SendInvites("My Subject", "Click here: %invite%", []*models.UserInvitation{
-		&models.UserInvitation{Email: "user1@domain.com", VerificationKey: "1234"},
-		&models.UserInvitation{Email: "user2@domain.com", VerificationKey: "5678"},
+		{Email: "user1@domain.com", VerificationKey: "1234"},
+		{Email: "user2@domain.com", VerificationKey: "5678"},
 	})
 
 	err := worker.
