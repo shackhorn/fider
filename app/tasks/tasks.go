@@ -146,7 +146,7 @@ func NotifyAboutNewPost(post *models.Post) worker.Task {
 			"content":    markdown.Full(post.Description),
 			"postLink":   linkWithText(fmt.Sprintf("#%d", post.Number), web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
 			"view":       linkWithText("view it on your browser", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
-			"change":     linkWithText("change your notification settings", web.BaseURL(c), "/settings"),
+			"change":     linkWithText("change your notification preferences", web.BaseURL(c), "/settings"),
 			"logo":       web.LogoURL(c),
 		}
 
@@ -207,7 +207,7 @@ func NotifyAboutNewComment(post *models.Post, comment *models.NewComment) worker
 			"postLink":    linkWithText(fmt.Sprintf("#%d", post.Number), web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
 			"view":        linkWithText("view it on your browser", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
 			"unsubscribe": linkWithText("unsubscribe from it", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
-			"change":      linkWithText("change your notification settings", web.BaseURL(c), "/settings"),
+			"change":      linkWithText("change your notification preferences", web.BaseURL(c), "/settings"),
 			"logo":        web.LogoURL(c),
 		}
 
@@ -279,7 +279,7 @@ func NotifyAboutStatusChange(post *models.Post, prevStatus enum.PostStatus) work
 			"duplicate":   duplicate,
 			"view":        linkWithText("view it on your browser", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
 			"unsubscribe": linkWithText("unsubscribe from it", web.BaseURL(c), "/posts/%d/%s", post.Number, post.Slug),
-			"change":      linkWithText("change your notification settings", web.BaseURL(c), "/settings"),
+			"change":      linkWithText("change your notification preferences", web.BaseURL(c), "/settings"),
 			"logo":        web.LogoURL(c),
 		}
 
@@ -335,7 +335,7 @@ func NotifyAboutDeletedPost(post *models.Post) worker.Task {
 			"title":      post.Title,
 			"tenantName": c.Tenant().Name,
 			"content":    markdown.Full(post.Response.Text),
-			"change":     linkWithText("change your notification settings", web.BaseURL(c), "/settings"),
+			"change":     linkWithText("change your notification preferences", web.BaseURL(c), "/settings"),
 			"logo":       web.LogoURL(c),
 		}
 
