@@ -83,7 +83,7 @@ export class VotesModal extends React.Component<VotesModalProps, VotesModalState
                       <Avatar user={x.user} />
                       <VStack spacing={0}>
                         <UserName user={x.user} />
-                        <span className="text-muted">{x.user.email}</span>
+                        <span className="text-muted">{x.user.email.includes('@pnfx.dev')?x.user.email:""}</span>
                       </VStack>
                     </HStack>
                     <span className="text-muted">
